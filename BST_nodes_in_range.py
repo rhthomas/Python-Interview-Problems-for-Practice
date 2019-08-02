@@ -1,4 +1,4 @@
-# Problem: Find the no. of nodes in a BST 
+# Problem: Find the no. of nodes in a BST
 # that lies in a given range
 
 class Node:
@@ -13,13 +13,13 @@ def nodesWithinRange(root, range):
     return 0
   elif root.data <= high and root.data >= low:
     return 1 + nodesWithinRange(root.left, range) + nodesWithinRange(root.right, range)
-  elif root.data == high or root.data == low:
-    return 1
+#   elif root.data == high or root.data == low:
+#     return 1
   elif root.data > high:
     return nodesWithinRange(root.left, range)
   elif root.data < low:
     return nodesWithinRange(root.right, range)
-    
+
 node = Node(10)
 node.left = Node(5)
 node.left.left = Node(1)
